@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rooted"
+    android:background="@android:color/black"
+    android:layout_height="match_parent"
+    tools:context=".Wallaper">
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/wall"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_height="match_parent"/>
+    <Button
+        android:id="@+id/expandButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/up_button"
+        android:drawableStart="@drawable/ic_up"
+        android:drawableLeft="@drawable/ic_up"
+        android:drawablePadding="12dp"
+        android:onClick="toggleBottom"
+        android:padding="12dp"
+        android:paddingEnd="24dp"
+        android:paddingRight="24dp"
+        android:text="EXPAND"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/sheet"
+        android:backgroundTint="#D9FFFFFF"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/collapseSheet"
+            android:layout_marginTop="20dp"
+            android:onClick="toggleBottom"
+            android:src="@drawable/ic_down" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_wallpaper"
+                        android:gravity="center"
+                        android:id="@+id/textset"
+                        android:text="SET"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/set"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="#D4D1D1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_download"
+                        android:gravity="center"
+                        android:text="SAVE"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="18dp"
+                        android:background="#D4D1D1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_post"
+                        android:gravity="center"
+                        android:text="SHARE"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/wallbar"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
